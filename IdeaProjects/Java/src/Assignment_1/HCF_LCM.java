@@ -12,8 +12,7 @@ public class HCF_LCM {
         for(int c=1;c<=a;c++){
             if(a%c==0){
                 if(b%c==0){
-                    int HCF=Math.min(c,a);
-                    System.out.println(HCF);
+
                 }
             }
         }
