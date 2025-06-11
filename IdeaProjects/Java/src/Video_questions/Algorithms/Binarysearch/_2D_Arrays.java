@@ -1,5 +1,5 @@
 package Video_questions.Algorithms.Binarysearch;
-
+//when rows and columns are sorted
 import java.util.*;
 
 public class _2D_Arrays {
