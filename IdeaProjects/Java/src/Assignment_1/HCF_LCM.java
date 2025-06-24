@@ -1,22 +1,20 @@
 package Assignment_1;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class HCF_LCM {
     public static void main(String[] args) {
-        Scanner i=new Scanner(System.in);
-        System.out.println("Enter the value of a:");
-        int a=i.nextInt();
-        System.out.println("Enter the value of b:");
-        int b=i.nextInt();
-        for(int c=1;c<=a;c++){
-            if(a%c==0){
-                if(b%c==0){
-
-                }
-            }
+        System.out.println(gcd(2,7));
+        System.out.println(lcm(2,7));
+    }
+    static int gcd(int a,int b){
+        if(a==0){
+            return b;
         }
-
-
+        return gcd(b%a,a);
+    }
+    static int lcm(int a ,int b){
+        int d=gcd(a,b);
+        return (a*b)/d;
     }
 }
