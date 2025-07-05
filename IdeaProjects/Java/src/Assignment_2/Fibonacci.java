@@ -12,7 +12,12 @@ public class Fibonacci {
         int b=1;
         int c=2;
         System.out.println("Fibonacci series are:");
-        System.out.print(a+",");
+        if(n>0) {
+            System.out.print(a + "," + b + ",");
+        }
+        if(n==0){
+            System.out.println(a);
+        }
         while(c<=n){
                 int temp=a;
                 a=b;
