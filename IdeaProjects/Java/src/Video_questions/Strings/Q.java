@@ -3,20 +3,24 @@ package Video_questions.Strings;
 public class Q {
     public static void main(String[] args) {
         String a="abcdef";
-        String b="abc";
-        System.out.println(prefix(a,b));
+        String b="ab9d4";
+prefix(a,b);
     }
-    static String prefix(String a,String b){
-        int c=0;
-        for (int i = 0; i <a.length() ; i++) {
-            if(a.charAt(i)==b.charAt(i)){
-                c++;
-                if(c>0){
-                    return a.substring(i,c);
-                }
-            }
-        }
-        return null;
+    static void prefix(String a,String b){
+       if(b.isEmpty()){
+           return ;
+       }
+       StringBuilder Build=new StringBuilder();
+       while(!b.isEmpty()){
+           if(a.charAt(0)==b.charAt(0)){
+            Build.append(a.charAt(0));
+           }else{
+               break;
+           }
+           a=a.substring(1);
+           b=b.substring(1);
+       }
+        System.out.println(Build);
     }
 }
 

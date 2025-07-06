@@ -1,4 +1,4 @@
-package Video_questions;
+package Video_questions.Patterns;
 //1
 //1 2
 //1 2 3

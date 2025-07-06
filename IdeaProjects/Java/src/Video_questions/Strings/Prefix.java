@@ -3,19 +3,20 @@ package Video_questions.Strings;
 public class Prefix {
     public static void main(String[] args) {
 String a="abcdef";
-String b="abc";
+String b="";
         System.out.println(prefix(a,b));
     }
     static boolean prefix(String a,String b){
-        int c=0;
-        for (int i = 0; i <a.length() ; i++) {
-         if(a.charAt(i)==b.charAt(i)){
-             c++;
-         }
-         if(c>0){
-             return true;
-         }
+        if(b.length()==0){
+            return false;
         }
-        return false;
+        while(!b.isEmpty()) {
+            if (a.charAt(0) != b.charAt(0)) {
+                return false;
+            }
+           a= a.substring(1);
+           b= b.substring(1);
+        }
+        return true;
     }
 }

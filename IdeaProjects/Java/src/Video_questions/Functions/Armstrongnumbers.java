@@ -1,12 +1,14 @@
 package Video_questions.Functions;
 
 public class Armstrongnumbers {
+    static int x=90;
     public static void main(String[] args) {
-        int h=89;
-        System.out.println(sum(h));
+        System.out.println(x);
+        int x=40;
+        System.out.println(x);
+        print();
     }
-   static boolean sum(int n){
-       int a=89;
-        return n==a;
-   }
+    static void print(){
+        System.out.println(x);
+    }
 }
