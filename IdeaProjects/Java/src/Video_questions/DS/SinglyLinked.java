@@ -1,4 +1,7 @@
-package Video_questions.DS.LinkedList;
+package Video_questions.DS;
+
+import Video_questions.DS.LinkedList.LL;
+
 public class SinglyLinked {
     public static void main(String[] args) {
  LL L=new LL();
