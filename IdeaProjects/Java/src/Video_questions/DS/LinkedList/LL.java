@@ -56,11 +56,14 @@ public void insert(int value,int index){
         size++;
 }
 public int deleteFirst(){
-        int val=head.value;
-        head=head.next;
+
         if(head==null){
-            tail=null;
+
+            return -10000;
         }
+    int val=head.value;
+
+    head=head.next;
         size--;
         return val;
 }

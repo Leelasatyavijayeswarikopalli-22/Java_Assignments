@@ -2,8 +2,8 @@ package Video_questions.Algorithms.Binarysearch;
 //Greatest number that is smaller or equal to target number
 public class FloorOfANumber {
     public static void main(String[] args) {
-        int[] arr={1,23,44,65,78,91,95,101};
-        int target=43;
+        int[] arr={1,2,4,7,9};
+        int target=5;
         System.out.println(floor(arr,target));
     }
     static int floor(int[] arr, int target){
