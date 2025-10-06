@@ -1,5 +1,5 @@
 package Video_questions.DS.LinkedList;
-
+//head doesn't change in circular linked list
 public class LLC {
     private class Node{
         int val;
@@ -35,12 +35,17 @@ public class LLC {
         if(node.val==val){
             head=head.next;
             tail.next=head;
-            return;
+           return;
+        }else{
+            if(tail==head){
+                head=null;
+                return;
+            }
         }
+
         do{
-            Node n=node.next;
-            if(n.val==val){
-                node.next=n.next;
+            if(node.val==val){
+                node.next=node.next.next;
                 break;
             }
             node=node.next;
@@ -48,11 +53,13 @@ public class LLC {
     }
     public void display(){
         Node node=head;
-        if(head!=null){
-            do{
+        if(head==null){
+            System.out.println("Linked list is empty");
+            return;
+        }
+           do{
                 System.out.print(node.val+"->");
                 node=node.next;
-            }while(node!=head);
-        }
+            } while(node!=head);
     }
 }

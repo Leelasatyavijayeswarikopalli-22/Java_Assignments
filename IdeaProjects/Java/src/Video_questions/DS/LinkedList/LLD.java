@@ -18,38 +18,33 @@ public class LLD {
    private Node tail;
    private int size;
    public void insertAtFirst(int value){
-       Node node=new Node(value);
-       node.next=head;
-       node.previous=null;
-       if(head!=null) {
-           head.previous = node;
+       Node newNode=new Node(value);
+       if(head==null){
+           head=newNode;
+           tail=newNode;
+           return;
        }
-       if(tail==null){
-           tail=head;
-       }
-       head=node;
+       head.previous=newNode;
+       newNode.next=head;
+       head=newNode;
        size++;
    }
    public void insertAtLast(int val){
-Node node=new Node(val);
-if(tail!=null) {
-    tail.next = node;
+       Node newNode=new Node(val);
+       if(head==null){
+           head=newNode;
+           tail=newNode;
+           return;
+       }
+       tail.next=newNode;
+       newNode.previous=tail;
+       tail=newNode;
+       size++;
 }
-
-node.next=null;
-node.previous=tail;
-tail=node;
-if(head==null){
-    node.previous=null;
-    head=node;
-    return;
-}
-size++;
-   }
    public void insert(int val,int index){
        Node node=new Node(val);
        Node temp=head;
-       if(temp==null){
+       if(temp==null||index==0){
            insertAtFirst(val);
            return;
        }
@@ -57,8 +52,8 @@ size++;
            temp=temp.next;
        }
        node.next = temp.next;
-       if(temp.next!=null) {
-           temp.next.previous = node;
+       if(temp.next!=null){
+           temp.next.previous=node;
        }
        temp.next=node;
        node.previous=temp;
@@ -76,6 +71,21 @@ size++;
            node=node.previous;
        }
        System.out.println("null");
+   }
+   public void deleteAtHead(){
+       if(head==null){
+           return;
+       }
+       if(head.next!=null) {
+           head.next.previous = null;
+       }
+       if(head==tail){
+           tail=tail.previous;
+           head=head.next;
+           return;
+       }
+       head=head.next;
+       size--;
    }
    public void display(){
        Node node=head;
