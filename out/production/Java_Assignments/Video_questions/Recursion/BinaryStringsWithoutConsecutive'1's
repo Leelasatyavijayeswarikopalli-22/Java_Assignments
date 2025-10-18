@@ -1,0 +1,18 @@
+class Solution {
+    List<String> list;
+    public List<String> generateBinaryStrings(int n) {
+        list=new ArrayList<>();
+        generate("",n);
+        return list;
+    }
+    public void generate(String s,int n){
+    if(s.length()==n){
+        list.add(s);
+        return;
+    }
+    generate(s+"0",n);
+    if(s.isEmpty()||s.charAt(s.length()-1)=='0'){
+        generate(s+"1",n);
+    }
+    }
+}
