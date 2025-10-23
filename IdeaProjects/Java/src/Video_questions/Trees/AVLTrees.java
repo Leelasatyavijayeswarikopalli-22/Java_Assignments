@@ -133,7 +133,7 @@ public class AVLTrees {
 
     public static void main(String[] args) {
       AVLTrees avlt = new AVLTrees();
-        int[] nums = {5, 2, 7, 1, 4, 10,12};
+        int[] nums = {5, 2, 7, 1, 4, 15,20,14,17,18};
         avlt.populate(nums);
         avlt.display();
     }
