@@ -1,4 +1,4 @@
-package Video_questions.Trees;
+package Video_questions.DS.Trees;
 
 public class BSTcode {
     private class Node{

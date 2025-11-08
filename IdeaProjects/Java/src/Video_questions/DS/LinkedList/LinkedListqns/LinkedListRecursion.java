@@ -19,19 +19,19 @@ class LLR {
     private Node tail;
     private int size;
     void insertRec(int value,int index){
-        if(head==null){
-            return;
-        }
         head=insertRec(value,index,head);
     }
    private Node insertRec(int val,int index,Node node){
+        if(node==null){
+            return new Node(val);
+        }
         if(index==0){
             Node temp=new Node(val);
-            temp=node.next;
+            temp.next=node;
             size++;
             return temp;
         }
-        node.next=insertRec(val,index-1,node);
+        node.next=insertRec(val,index-1,node.next);
         return node;
     }
     public void display(){
@@ -42,22 +42,13 @@ class LLR {
         }
         System.out.println("Null");
     }
-    public void insertAtFirst( int value) {
-        Node node = new Node(value);
-        node.next=head;
-        head=node;
-        if(tail==null){              //this means this is the first node...
-            tail = head;
-        }
-        size++;
-    }
 }
 public class LinkedListRecursion {
     public static void main(String[] args) {
         LLR l=new LLR();
-        l.insertAtFirst(1);
-        l.insertAtFirst(2);
-//        l.insertRec(12,1);
+       l.insertRec(12,0);
+       l.insertRec(11,1);
+       l.insertRec(10,1);
         l.display();
     }
 }

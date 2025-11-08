@@ -1,4 +1,4 @@
-package Video_questions.Trees;
+package Video_questions.DS.Trees;
 
 public class AVLTrees {
     private class Node {
