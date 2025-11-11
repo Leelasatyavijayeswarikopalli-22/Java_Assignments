@@ -63,6 +63,9 @@ public class Heap<T extends Comparable<T>>{
             downheap(min);
         }
     }
+    public int size(){
+        return list.size();
+    }
     public ArrayList<T> heapSort()throws Exception{
         ArrayList<T> data =new ArrayList<>();
         if(list.isEmpty()){
