@@ -27,29 +27,38 @@ public class LLC {
         tail=node;
         size++;
     }
-    public void delete(int val){
-        Node node=head;
-        if(node==null){
-            return;
-        }
-        if(node.val==val){
-            head=head.next;
-            tail.next=head;
-           return;
-        }else{
-            if(tail==head){
-                head=null;
-                return;
-            }
+    public void delete(int val) {
+        if (head == null) {
+            return; // Empty list
         }
 
-        do{
-            if(node.val==val){
-                node.next=node.next.next;
-                break;
+        // Case 1: Single node in the list
+        if (head == tail && head.val == val) {
+            head = null;
+            tail = null;
+            return;
+        }
+
+        // Case 2: Deleting the head node
+        if (head.val == val) {
+            head = head.next;
+            tail.next = head; // Maintain circular link
+            return;
+        }
+
+        // Case 3: Deleting any other node
+        Node current = head;
+        while (current.next != head) { // Stop when we loop back
+            if (current.next.val == val) {
+                // If deleting tail, update tail reference
+                if (current.next == tail) {
+                    tail = current;
+                }
+                current.next = current.next.next;
+                return;
             }
-            node=node.next;
-        }while(node!=head);
+            current = current.next;
+        }
     }
     public void display(){
         Node node=head;
