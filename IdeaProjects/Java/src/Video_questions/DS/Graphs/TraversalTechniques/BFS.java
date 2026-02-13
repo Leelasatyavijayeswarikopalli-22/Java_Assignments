@@ -3,18 +3,34 @@ package Video_questions.DS.Graphs.TraversalTechniques;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class BFS {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        ArrayList<ArrayList<Integer>> graph=new ArrayList<>();
+        for(int  i=0;i<8;i++){
+            graph.add(new ArrayList<>());
+        }
+        graph.get(1).add(2);
+        graph.get(1).add(3);
+        graph.get(2).add(1);
+        graph.get(2).add(5);
+        graph.get(2).add(6);
+        graph.get(3).add(1);
+        graph.get(3).add(7);
+        graph.get(5).add(2);
+        graph.get(6).add(2);
+        System.out.println(bfsGraph(1,8,graph));
 
     }
-    public ArrayList<Integer> bfsGraph(int v,ArrayList<ArrayList<Integer>> adj){
+    public static ArrayList<Integer> bfsGraph(int source,int v,ArrayList<ArrayList<Integer>> adj){
         Queue<Integer> q;
         q = new LinkedList<>();
         ArrayList<Integer> bfs=new ArrayList<>();
         boolean[] vis=new boolean[v];
-        q.add(0);
-        vis[0]=true;
+        q.add(source);
+        vis[source]=true;
         while (!q.isEmpty()) {
             Integer node=q.poll();
             bfs.add(node);
